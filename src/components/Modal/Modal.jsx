@@ -4,6 +4,12 @@ import css from './Modal.module.css';
 const Modal = ({ modalData, onCloseModal }) => {
 
   useEffect(() => {
+
+    const onClickESC = event => {
+      if (event.code === 'Escape') {
+      onCloseModal();
+      } 
+    };
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onClickESC);
 
@@ -12,12 +18,6 @@ const Modal = ({ modalData, onCloseModal }) => {
       window.removeEventListener('keydown', onClickESC);
     }
   });
-
-  const onClickESC = event => {
-    if (event.code === 'Escape') {
-    onCloseModal();
-    } 
-  };
 
   const handleCloseModal = event => {
     if (event.target === event.currentTarget) {
