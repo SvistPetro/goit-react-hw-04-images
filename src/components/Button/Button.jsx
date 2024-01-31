@@ -7,7 +7,6 @@ const Button = ({ handleLoadMore }) => {
           Load more
         </button>
       </div>
-      
     );
   };
   
